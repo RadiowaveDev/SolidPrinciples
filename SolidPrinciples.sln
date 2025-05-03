@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleSolid", "ExampleSoli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetoPrincipiosSolid", "RetoPrincipiosSolid\RetoPrincipiosSolid.csproj", "{602A1A23-3102-47F4-8082-7AB376A60AEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservaRestaurant", "ReservaRestaurant\ReservaRestaurant.csproj", "{2D3938E5-7033-43B4-AA7F-7C3FD34C13B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{602A1A23-3102-47F4-8082-7AB376A60AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{602A1A23-3102-47F4-8082-7AB376A60AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{602A1A23-3102-47F4-8082-7AB376A60AEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D3938E5-7033-43B4-AA7F-7C3FD34C13B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D3938E5-7033-43B4-AA7F-7C3FD34C13B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D3938E5-7033-43B4-AA7F-7C3FD34C13B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D3938E5-7033-43B4-AA7F-7C3FD34C13B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

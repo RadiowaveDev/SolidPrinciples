@@ -21,11 +21,13 @@
         }
 
         //Principio de sustitución de Liskov: Implementacion de metodo abstracto Procesar en clases hijas
+        // Liskov tiene que ver con el contexto del mundo real: La clase hija se relaciona con el interface heredado?
+
         public abstract class MetodoPago
         {
             public abstract bool Procesar(decimal monto, string referencia);
         }
-
+        //Principio de Responsabilidad Única: Solo se encarga de transfrencia de tarjeta de credito
         public class TarjetaCredito : MetodoPago
         {
             public override bool Procesar(decimal monto, string referencia)
@@ -34,7 +36,7 @@
                 return true;
             }
         }
-
+        //Principio de Responsabilidad Única: Solo se encarga de transferencia de Paypal
         public class Paypal : MetodoPago
         {
             public override bool Procesar(decimal monto, string referencia)
@@ -44,6 +46,7 @@
             }
         }
 
+        // Principio de Abierto/Cerrado (O)
         public class Transferencia : MetodoPago
         {
             public override bool Procesar(decimal monto, string referencia)
@@ -53,6 +56,7 @@
             }
         }
         //Principio de Segregacion de Interfaces: Las clases solo utilizan las interfaces que utiliza
+        //Solo se cumple en interfaces no en clases abstractas
         public class EmailNotificacion : INotificacion
         {
             public void EnviarConfirmacion(string destinatario, string detalles)
@@ -83,7 +87,7 @@
                 return new Reserva { Id = id };
             }
         }
-
+        //Principio de Responsabilidad Única: Solo se encarga de las propiedadaes de Reserva
         public class Reserva
         {
             public string Id { get; set; }
@@ -105,6 +109,7 @@
         /*Principio de Inversión de Dependencias:
          Uso de Interface INotificacion como propiedad que es invocada en el constructor
         de la clase SistemaReservacion*/
+        // Principio de Abierto/Cerrado (O) ?
         public class SistemaReservacion : IReserva, IPago
         {
             private readonly PersistenciaReserva _persistencia;
@@ -112,6 +117,7 @@
             private readonly MetodoPago _metodoPago;
             private readonly Logger _logger;
 
+            //Este constructor recibe dependencias como abstracciones
             public SistemaReservacion(
                 PersistenciaReserva persistencia,
                 INotificacion notificador,
